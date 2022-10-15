@@ -81,7 +81,7 @@
                   "children": [
                     {
                       "boxShadow": "none",
-                      "widgetName": "section_advance_notificationCopy",
+                      "widgetName": "section_attachments",
                       "borderColor": "#27272a",
                       "isCanvas": true,
                       "displayName": "Container",
@@ -126,7 +126,7 @@
                           "children": [
                             {
                               "boxShadow": "none",
-                              "widgetName": "input_insurance_3rd_liabilityCopyCopy",
+                              "widgetName": "input",
                               "displayName": "Input",
                               "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                               "searchTags": [
