@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getItem",
-    "fullyQualifiedName": "Units.getItem",
+    "name": "getUnitType",
+    "fullyQualifiedName": "Units.getUnitType",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -16,14 +16,12 @@
     "pageId": "Home",
     "collectionId": "Home_Units",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  if (id && !Units.selectedItem[id]) {\n    Units.selectedItem[id] = Units.items.find(item => {\n      return item.pp_unitid === id;\n    }) || ({});\n  }\n  return id ? Units.selectedItem[id] : {};\n}",
+      "body": "id => {\n  return Units.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
       "selfReferencingDataPaths": [],
-      "jsArguments": [
-        {}
-      ],
+      "jsArguments": [],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -36,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  if (id && !Units.selectedItem[id]) {\n    Units.selectedItem[id] = Units.items.find(item => {\n      return item.pp_unitid === id;\n    }) || ({});\n  }\n  return id ? Units.selectedItem[id] : {};\n}"
+      "id => {\n  return Units.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getItem",
+  "id": "Home_Units.getUnitType",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bbc5ac99f19072638d562"
+  "gitSyncId": "633ea50989020c7ac29654e2_634bd0e206463b741957d15e"
 }

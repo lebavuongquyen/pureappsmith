@@ -7499,6 +7499,9 @@
                               "dynamicBindingPathList": [
                                 {
                                   "key": "accentColor"
+                                },
+                                {
+                                  "key": "defaultText"
                                 }
                               ],
                               "labelPosition": "Left",
@@ -7522,7 +7525,7 @@
                               "isLoading": false,
                               "borderRadius": "0px",
                               "iconAlign": "left",
-                              "defaultText": ""
+                              "defaultText": "{{Units.getUnitType(appsmith.store.unitId)}}"
                             },
                             {
                               "boxShadow": "none",
