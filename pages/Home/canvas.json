@@ -7818,7 +7818,7 @@
                               "isLoading": false,
                               "borderRadius": "0px",
                               "iconAlign": "left",
-                              "defaultText": "{{appsmith.store.pp_gla}}"
+                              "defaultText": "{{appsmith.store.selectedUnit}}"
                             },
                             {
                               "boxShadow": "none",
@@ -8539,7 +8539,7 @@
                               "renderMode": "CANVAS",
                               "isLoading": false,
                               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                              "onOptionChange": "{{Units.onSelectUnit()}}"
+                              "onOptionChange": "{{storeValue('selectedUnit',select_unit_no.selectedOptionValue)}}"
                             }
                           ],
                           "key": "7rapaer8bh",
