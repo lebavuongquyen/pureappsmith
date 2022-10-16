@@ -6,11 +6,15 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\titems: Get_Units.data,\n\tgetItems: async () => {\n\t\t//use async-await or promises\n\t\tif(!Get_Units.data) {\n\t\t\tawait Get_Units.run();\n\t\t}\n\t\tthis.items = Get_Units.data;\n\t\treturn this.items;\n\t},\n\toptions : () => {\n\t\tlet options = [];\n\t\tif(this.items) {\n\t\t\tthis.items.forEach(function(item){\n\t\t\t\toptions.push({\n\t\t\t\t\tlabel : item.pp_name,\n\t\t\t\t\tvalue : item.pp_unitid\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\treturn options;\n\t}\n}",
+    "body": "export default {\n\titems: Get_Units.data,\n\tselectItem : {},\n\tgetItems: async () => {\n\t\t//use async-await or promises\n\t\tif(!Get_Units.data) {\n\t\t\tawait Get_Units.run();\n\t\t}\n\t\tthis.items = Get_Units.data;\n\t\treturn this.items;\n\t},\n\toptions : () => {\n\t\tlet options = [];\n\t\tif(this.items) {\n\t\t\tthis.items.forEach(function(item){\n\t\t\t\toptions.push({\n\t\t\t\t\tlabel : item.pp_name,\n\t\t\t\t\tvalue : item.pp_unitid\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\treturn options;\n\t},\n\tgetItem: (id) => {\n\t\treturn this.items.find((item) => {return item.pp_unitid === id});\n\t},\n\tonSelectUnit : () => {\n\t\tthis.selectItem = this.getItem(select_unit_no.selectedOptionValue);\n\t\tinput_unit_gla.text = this.selectedItem.pp_gla;\n\t}\n}",
     "variables": [
       {
         "name": "items",
         "value": "Get_Units.data"
+      },
+      {
+        "name": "selectItem",
+        "value": "{}"
       }
     ]
   },
