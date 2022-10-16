@@ -7818,7 +7818,7 @@
                               "isLoading": false,
                               "borderRadius": "0px",
                               "iconAlign": "left",
-                              "defaultText": "{{appsmith.store.selectedUnit}}"
+                              "defaultText": "{{Units.getItem(appsmith.store.unitId).pp_gla}}"
                             },
                             {
                               "boxShadow": "none",
@@ -8501,7 +8501,7 @@
                               "type": "SELECT_WIDGET",
                               "serverSideFiltering": false,
                               "hideCard": false,
-                              "defaultOptionValue": "GREEN",
+                              "defaultOptionValue": "",
                               "animateLoading": true,
                               "parentColumnSpace": 25.75,
                               "dynamicTriggerPathList": [
@@ -8539,7 +8539,7 @@
                               "renderMode": "CANVAS",
                               "isLoading": false,
                               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                              "onOptionChange": "{{storeValue('selectedUnit',select_unit_no.selectedOptionValue)}}"
+                              "onOptionChange": "{{storeValue('unitId',select_unit_no.selectedOptionValue)}}"
                             }
                           ],
                           "key": "7rapaer8bh",
