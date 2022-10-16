@@ -7818,7 +7818,7 @@
                               "isLoading": false,
                               "borderRadius": "0px",
                               "iconAlign": "left",
-                              "defaultText": "{{Units.selectedItem.pp_gla}}"
+                              "defaultText": "{{appsmith.store.pp_gla}}"
                             },
                             {
                               "boxShadow": "none",

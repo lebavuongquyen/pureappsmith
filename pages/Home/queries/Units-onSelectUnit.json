@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n  console.log(Units.selectedItem);\n}",
+      "body": "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n  appsmith.store.pp_gla = Units.selectedItem.pp_gla;\n  console.log(appsmith.store.pp_gla);\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n  console.log(Units.selectedItem);\n}"
+      "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n  appsmith.store.pp_gla = Units.selectedItem.pp_gla;\n  console.log(appsmith.store.pp_gla);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
