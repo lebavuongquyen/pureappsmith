@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n  appsmith.store.unit = Units.selectedItem;\n  appsmith.store.unit['pp_gla@OData.Community.Display.V1.FormattedValue'];\n  input_unit_gla.value = Units.selectedItem ? Units.selectedItem['pp_gla@OData.Community.Display.V1.FormattedValue'] : \"\";\n}",
+      "body": "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n  appsmith.store.unit = Units.selectedItem;\n  appsmith.store.unit['pp_gla@OData.Community.Display.V1.FormattedValue'];\n  input_unit_gla.value = Units.selectedItem ? Units.selectedItem['pp_gla@OData.Community.Display.V1.FormattedValue'] : \"\";\n}"
+      "() => {\n  Units.selectedItem = Units.getItem(select_unit_no.selectedOptionValue);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
