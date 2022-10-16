@@ -7818,7 +7818,7 @@
                               "isLoading": false,
                               "borderRadius": "0px",
                               "iconAlign": "left",
-                              "defaultText": "{{Units.selectedItem ? Units.selectedItem.pp_gla : \"\"}}"
+                              "defaultText": "{{Units.selectedItem.gla}}"
                             },
                             {
                               "boxShadow": "none",
