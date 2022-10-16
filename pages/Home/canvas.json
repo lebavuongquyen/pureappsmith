@@ -7161,7 +7161,7 @@
                               "labelStyle": "",
                               "inputType": "TEXT",
                               "placeholderText": "...",
-                              "isDisabled": false,
+                              "isDisabled": true,
                               "key": "zcpt3la9vz",
                               "labelTextSize": "1.875rem",
                               "isRequired": false,
@@ -7508,7 +7508,7 @@
                               "labelStyle": "",
                               "inputType": "TEXT",
                               "placeholderText": "...",
-                              "isDisabled": false,
+                              "isDisabled": true,
                               "key": "zcpt3la9vz",
                               "labelTextSize": "0.875rem",
                               "isRequired": false,
@@ -7804,7 +7804,7 @@
                               "labelStyle": "",
                               "inputType": "TEXT",
                               "placeholderText": "...",
-                              "isDisabled": false,
+                              "isDisabled": true,
                               "key": "zcpt3la9vz",
                               "labelTextSize": "0.875rem",
                               "isRequired": false,
@@ -8578,6 +8578,7 @@
                       "resetFormOnClick": false,
                       "boxShadow": "none",
                       "widgetName": "Button1",
+                      "onClick": "{{submit.run()}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -8592,6 +8593,11 @@
                       "hideCard": false,
                       "animateLoading": true,
                       "parentColumnSpace": 25.75,
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onClick"
+                        }
+                      ],
                       "leftColumn": 1,
                       "dynamicBindingPathList": [
                         {

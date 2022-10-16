@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getItems",
-    "fullyQualifiedName": "Units.getItems",
+    "name": "getLevel",
+    "fullyQualifiedName": "Units.getLevel",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -16,35 +16,32 @@
     "pageId": "Home",
     "collectionId": "Home_Units",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}",
+      "body": "id => {\n  return Units.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
-      "isAsync": true
+      "isAsync": false
     },
-    "executeOnLoad": true,
-    "clientSideExecution": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
       }
     ],
-    "isValid": false,
-    "invalids": [
-      "Unable to find plugin 613a26d921750e4b557a9241"
-    ],
+    "isValid": true,
+    "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
+      "id => {\n  return Units.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getItems",
+  "id": "Home_Units.getLevel",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bb639c99f19072638d4f9"
+  "gitSyncId": "633ea50989020c7ac29654e2_634bd82dc99f19072638d64f"
 }
