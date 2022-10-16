@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  return Units.items.find(item => {\n    return item.pp_unitid === id;\n  });\n}",
+      "body": "id => {\n  return Units.items.find(item => {\n    return item.pp_unitid === id;\n  }) || ({});\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {}
@@ -36,7 +36,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  return Units.items.find(item => {\n    return item.pp_unitid === id;\n  });\n}"
+      "id => {\n  return Units.items.find(item => {\n    return item.pp_unitid === id;\n  }) || ({});\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
