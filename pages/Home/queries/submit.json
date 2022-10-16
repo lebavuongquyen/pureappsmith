@@ -18,7 +18,12 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "path": "",
-      "headers": [],
+      "headers": [
+        {
+          "key": "content-type",
+          "value": "application/json"
+        }
+      ],
       "encodeParamsToggle": true,
       "queryParameters": [],
       "body": "{{\n\tUnits.getFormData()\n}}",
