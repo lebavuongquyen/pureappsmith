@@ -39,7 +39,7 @@
   "properties": {
     "colors": {
       "primaryColor": "#18181b",
-      "backgroundColor": "#60a5fa"
+      "backgroundColor": "transparent"
     },
     "borderRadius": {
       "appBorderRadius": "0px"
