@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getGla",
-    "fullyQualifiedName": "Units.getGla",
+    "name": "getLevel",
+    "fullyQualifiedName": "Units.getLevel",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,13 +13,13 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home",
-    "collectionId": "Home_Units",
+    "pageId": "TIF",
+    "collectionId": "TIF_Units",
     "actionConfiguration": {
       "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  Get_Units.data;\n}",
+      "body": "id => {\n  return Units.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  Get_Units.data;\n}"
+      "id => {\n  return Units.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getGla",
+  "id": "TIF_Units.getLevel",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bccce1023591fa1a9d542"
+  "gitSyncId": "633ea50989020c7ac29654e2_634bd82dc99f19072638d64f"
 }

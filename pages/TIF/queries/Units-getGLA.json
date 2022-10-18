@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home",
-    "collectionId": "Home_Units",
+    "pageId": "TIF",
+    "collectionId": "TIF_Units",
     "actionConfiguration": {
       "timeoutInMillisecond": 0,
       "paginationType": "NONE",
@@ -41,7 +41,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getGLA",
+  "id": "TIF_Units.getGLA",
   "deleted": false,
   "gitSyncId": "633ea50989020c7ac29654e2_634bcf1206463b741957d156"
 }

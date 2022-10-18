@@ -1,7 +1,7 @@
 {
   "unpublishedPage": {
-    "name": "Home",
-    "slug": "home",
+    "name": "TIF",
+    "slug": "tif",
     "layouts": [
       {
         "viewMode": false,
@@ -8659,7 +8659,7 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Home_Get_Units",
+              "id": "TIF_Get_Units",
               "name": "Get_Units",
               "confirmBeforeExecute": false,
               "pluginType": "API",
@@ -8669,9 +8669,9 @@
           ],
           [
             {
-              "id": "Home_Units.getItems",
+              "id": "TIF_Units.getItems",
               "name": "Units.getItems",
-              "collectionId": "Home_Units",
+              "collectionId": "TIF_Units",
               "clientSideExecution": true,
               "confirmBeforeExecute": false,
               "pluginType": "JS",
@@ -8684,7 +8684,7 @@
         ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "Home",
+        "id": "TIF",
         "deleted": false,
         "policies": [],
         "userPermissions": []

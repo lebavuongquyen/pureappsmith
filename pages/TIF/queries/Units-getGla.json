@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getItems",
-    "fullyQualifiedName": "Units.getItems",
+    "name": "getGla",
+    "fullyQualifiedName": "Units.getGla",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,19 +13,18 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home",
-    "collectionId": "Home_Units",
+    "pageId": "TIF",
+    "collectionId": "TIF_Units",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}",
+      "body": "id => {\n  Get_Units.data;\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
-      "isAsync": true
+      "isAsync": false
     },
-    "executeOnLoad": true,
-    "clientSideExecution": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -35,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
+      "id => {\n  Get_Units.data;\n}"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getItems",
+  "id": "TIF_Units.getGla",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bb639c99f19072638d4f9"
+  "gitSyncId": "633ea50989020c7ac29654e2_634bccce1023591fa1a9d542"
 }

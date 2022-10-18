@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getLevel",
-    "fullyQualifiedName": "Units.getLevel",
+    "name": "getFormData",
+    "fullyQualifiedName": "Units.getFormData",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,13 +13,13 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home",
-    "collectionId": "Home_Units",
+    "pageId": "TIF",
+    "collectionId": "TIF_Units",
     "actionConfiguration": {
       "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  return Units.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
+      "body": "() => {\n  let _formData = {\n    name: input_tenant_\n  };\n  return _formData;\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  return Units.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
+      "() => {\n  let _formData = {\n    name: input_tenant_\n  };\n  return _formData;\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getLevel",
+  "id": "TIF_Units.getFormData",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bd82dc99f19072638d64f"
+  "gitSyncId": "633ea50989020c7ac29654e2_634bd83d06463b741957d198"
 }

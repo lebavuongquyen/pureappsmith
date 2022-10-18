@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "options",
-    "fullyQualifiedName": "Units.options",
+    "name": "getItem",
+    "fullyQualifiedName": "Units.getItem",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,15 +13,17 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home",
-    "collectionId": "Home_Units",
+    "pageId": "TIF",
+    "collectionId": "TIF_Units",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}",
+      "body": "id => {\n  if (id && !Units.selectedItem[id]) {\n    Units.selectedItem[id] = Units.items.find(item => {\n      return item.pp_unitid === id;\n    }) || ({});\n  }\n  return id ? Units.selectedItem[id] : {};\n}",
       "selfReferencingDataPaths": [],
-      "jsArguments": [],
+      "jsArguments": [
+        {}
+      ],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -34,14 +36,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}"
+      "id => {\n  if (id && !Units.selectedItem[id]) {\n    Units.selectedItem[id] = Units.items.find(item => {\n      return item.pp_unitid === id;\n    }) || ({});\n  }\n  return id ? Units.selectedItem[id] : {};\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.options",
+  "id": "TIF_Units.getItem",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bbbec1023591fa1a9d4a0"
+  "gitSyncId": "633ea50989020c7ac29654e2_634bbc5ac99f19072638d562"
 }

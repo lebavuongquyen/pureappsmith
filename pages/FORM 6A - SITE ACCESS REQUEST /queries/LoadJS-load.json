@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getFormData",
-    "fullyQualifiedName": "Units.getFormData",
+    "name": "load",
+    "fullyQualifiedName": "LoadJS.load",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,18 +13,19 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home",
-    "collectionId": "Home_Units",
+    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
+    "collectionId": "FORM 6A - SITE ACCESS REQUEST _LoadJS",
     "actionConfiguration": {
-      "timeoutInMillisecond": 0,
+      "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  let _formData = {\n    name: input_tenant_\n  };\n  return _formData;\n}",
+      "body": "async () => {\n  console.log(body);\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
-      "isAsync": false
+      "isAsync": true
     },
     "executeOnLoad": false,
+    "clientSideExecution": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -34,14 +35,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  let _formData = {\n    name: input_tenant_\n  };\n  return _formData;\n}"
+      "async () => {\n  console.log(body);\n}"
     ],
-    "userSetOnLoad": false,
+    "userSetOnLoad": true,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Home_Units.getFormData",
+  "id": "FORM 6A - SITE ACCESS REQUEST _LoadJS.load",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bd83d06463b741957d198"
+  "gitSyncId": "633ea50989020c7ac29654e2_634e817cce51f22a5bc91b71"
 }
