@@ -1,7 +1,7 @@
 {
   "unpublishedPage": {
-    "name": "test",
-    "slug": "test",
+    "name": "Signature test",
+    "slug": "signature-test",
     "layouts": [
       {
         "viewMode": false,
@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 970,
+          "bottomRow": 2350,
           "containerStyle": "none",
           "snapRows": 96,
           "parentRowSpace": 1,
@@ -28,14 +28,14 @@
             {
               "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
               "widgetName": "Iframe1",
-              "srcDoc": "<canvas style=\"width:100%;height:100%\"></canvas>\n<script>window.parent.postMessage(msgText, \"*\");</script>",
+              "srcDoc": "<canvas style=\"width:100%;height:100%\"></canvas>\n<script>window.parent.postMessage('Hello', \"*\");</script>",
               "displayName": "Iframe",
               "iconSVG": "/static/media/icon.34169b6acebc8ace125dd1f638974aae.svg",
               "searchTags": [
                 "embed"
               ],
-              "topRow": 20,
-              "bottomRow": 52,
+              "topRow": 0,
+              "bottomRow": 227,
               "parentRowSpace": 10,
               "source": "",
               "type": "IFRAME_WIDGET",
@@ -52,7 +52,7 @@
                   "key": "onSrcDocChanged"
                 }
               ],
-              "leftColumn": 20,
+              "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
@@ -64,7 +64,7 @@
               "borderWidth": 1,
               "key": "nt3bnayj5e",
               "isDeprecated": false,
-              "rightColumn": 44,
+              "rightColumn": 64,
               "widgetId": "e0a8vlxyjb",
               "isVisible": true,
               "version": 1,
@@ -80,7 +80,7 @@
         "layoutOnLoadActions": [],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "test",
+        "id": "Signature test",
         "deleted": false,
         "policies": [],
         "userPermissions": []
