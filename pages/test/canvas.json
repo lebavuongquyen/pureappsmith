@@ -1,0 +1,90 @@
+{
+  "unpublishedPage": {
+    "name": "test",
+    "slug": "test",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 970,
+          "containerStyle": "none",
+          "snapRows": 96,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 64,
+          "minHeight": 970,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "children": [
+            {
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "widgetName": "Iframe1",
+              "srcDoc": "<canvas style=\"width:100%;height:100%\"></canvas>\n<script>window.postMessage('aaaaaa')</script>",
+              "displayName": "Iframe",
+              "iconSVG": "/static/media/icon.34169b6acebc8ace125dd1f638974aae.svg",
+              "searchTags": [
+                "embed"
+              ],
+              "topRow": 20,
+              "bottomRow": 52,
+              "parentRowSpace": 10,
+              "source": "https://www.example.com",
+              "type": "IFRAME_WIDGET",
+              "hideCard": false,
+              "borderOpacity": 100,
+              "animateLoading": true,
+              "parentColumnSpace": 22.078125,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onMessageReceived"
+                }
+              ],
+              "leftColumn": 20,
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                }
+              ],
+              "borderWidth": 1,
+              "key": "nt3bnayj5e",
+              "isDeprecated": false,
+              "rightColumn": 44,
+              "widgetId": "e0a8vlxyjb",
+              "isVisible": true,
+              "version": 1,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "onMessageReceived": "{{JSObject1.myFun1()}}"
+            }
+          ]
+        },
+        "layoutOnLoadActions": [],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "test",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "633ea50989020c7ac29654e2_634fd904bfa5a5280ccce15f"
+}

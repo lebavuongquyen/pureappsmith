@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "LoadJS",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tqueues : ['https://szimek.github.io/signature_pad/js/signature_pad.umd.js'],\n\tload: async () => {\n\t\t//use async-await or promises\n\t\tconsole.log(body);\n\t\t//const script = document.getElementByTagName('SCRIPT');\n\t\t//console.log(script);\n\t}\n}",
+    "variables": [
+      {
+        "name": "queues",
+        "value": "['https://szimek.github.io/signature_pad/js/signature_pad.umd.js']"
+      }
+    ]
+  },
+  "id": "FORM 15 - FIT-OUT COMPLETION I_LoadJS",
+  "deleted": false,
+  "gitSyncId": "633ea50989020c7ac29654e2_634fd82a93760701ad1c5b88"
+}
