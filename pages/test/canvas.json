@@ -28,7 +28,7 @@
             {
               "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
               "widgetName": "Iframe1",
-              "srcDoc": "<canvas style=\"width:100%;height:100%\"></canvas>\n<script>window.postMessage('aaaaaa')</script>",
+              "srcDoc": "<canvas style=\"width:100%;height:100%\"></canvas>\n<script>window.parent.postMessage(msgText, \"*\");</script>",
               "displayName": "Iframe",
               "iconSVG": "/static/media/icon.34169b6acebc8ace125dd1f638974aae.svg",
               "searchTags": [
