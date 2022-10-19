@@ -37,8 +37,9 @@
               "topRow": 20,
               "bottomRow": 52,
               "parentRowSpace": 10,
-              "source": "https://www.example.com",
+              "source": "",
               "type": "IFRAME_WIDGET",
+              "title": "Iframe",
               "hideCard": false,
               "borderOpacity": 100,
               "animateLoading": true,
@@ -46,6 +47,9 @@
               "dynamicTriggerPathList": [
                 {
                   "key": "onMessageReceived"
+                },
+                {
+                  "key": "onSrcDocChanged"
                 }
               ],
               "leftColumn": 20,
@@ -68,7 +72,8 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "onMessageReceived": "{{JSObject1.myFun1()}}"
+              "onMessageReceived": "{{JSObject1.myFun1()}}",
+              "onSrcDocChanged": "{{JSObject1.myFun1()}}"
             }
           ]
         },
