@@ -7,6 +7,10 @@
     {
       "id": "FORM 6A - SITE ACCESS REQUEST ",
       "isDefault": false
+    },
+    {
+      "id": "FORM 8 – SITE HANDOVER INSPECT",
+      "isDefault": false
     }
   ],
   "viewMode": false,

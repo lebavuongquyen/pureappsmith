@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "LoadJS",
+    "pageId": "FORM 8 – SITE HANDOVER INSPECT",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tqueues : ['https://szimek.github.io/signature_pad/js/signature_pad.umd.js'],\n\tload: async () => {\n\t\t//use async-await or promises\n\t\tconsole.log(body);\n\t\t//const script = document.getElementByTagName('SCRIPT');\n\t\t//console.log(script);\n\t}\n}",
+    "variables": [
+      {
+        "name": "queues",
+        "value": "['https://szimek.github.io/signature_pad/js/signature_pad.umd.js']"
+      }
+    ]
+  },
+  "id": "FORM 8 – SITE HANDOVER INSPECT_LoadJS",
+  "deleted": false,
+  "gitSyncId": "633ea50989020c7ac29654e2_634f9b0cdd325a533214b869"
+}
