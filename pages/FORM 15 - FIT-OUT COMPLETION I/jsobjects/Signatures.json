@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Signatures",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\ttenantRepresentativeHandle : () => {\n\t\tthis.storeMessasge('tenant_representative' , signature_1.message);\n\t},\n\tstoreMessasge : (key , message) => {\n\t\tif( !message ) {\n\t\t\tstoreValue(key , null);\n\t\t}\n\t\telse {\n\t\t\tstoreValue(message , null);\n\t\t}\n\t}\n}",
+    "variables": []
+  },
+  "id": "FORM 15 - FIT-OUT COMPLETION I_Signatures",
+  "deleted": false,
+  "gitSyncId": "633ea50989020c7ac29654e2_634fd82a93760701ad1c5b88"
+}

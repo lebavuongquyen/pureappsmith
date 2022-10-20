@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "load",
-    "fullyQualifiedName": "LoadJS.load",
+    "name": "tenantRepresentativeHandle",
+    "fullyQualifiedName": "Signatures.tenantRepresentativeHandle",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,19 +13,18 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
-    "collectionId": "FORM 6A - SITE ACCESS REQUEST _LoadJS",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "collectionId": "FORM 15 - FIT-OUT COMPLETION I_Signatures",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  console.log(body);\n}",
+      "body": "() => {\n  Signatures.storeMessasge('tenant_representative', signature_1.message);\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
     },
     "executeOnLoad": false,
-    "clientSideExecution": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -35,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  console.log(body);\n}"
+      "() => {\n  Signatures.storeMessasge('tenant_representative', signature_1.message);\n}"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "FORM 6A - SITE ACCESS REQUEST _LoadJS.load",
+  "id": "FORM 15 - FIT-OUT COMPLETION I_Signatures.tenantRepresentativeHandle",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634e817cce51f22a5bc91b71"
+  "gitSyncId": "633ea50989020c7ac29654e2_63511464a53c13263e40e339"
 }
