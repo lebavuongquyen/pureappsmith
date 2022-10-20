@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "(key, message) => {\n  if (!message) {\n    storeValue(key, null);\n  } else {\n    storeValue(message, null);\n  }\n}",
+      "body": "(key, message) => {\n  if (!message) {\n    storeValue(key, null);\n  } else {\n    storeValue(key, message);\n  }\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {},
@@ -37,7 +37,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "(key, message) => {\n  if (!message) {\n    storeValue(key, null);\n  } else {\n    storeValue(message, null);\n  }\n}"
+      "(key, message) => {\n  if (!message) {\n    storeValue(key, null);\n  } else {\n    storeValue(key, message);\n  }\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  Signatures.storeMessasge('tenant_representative', signature_1.message);\n}",
+      "body": "() => {\n  console.log(signature_1.message);\n  Signatures.storeMessasge('tenant_representative', signature_1.message);\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  Signatures.storeMessasge('tenant_representative', signature_1.message);\n}"
+      "() => {\n  console.log(signature_1.message);\n  Signatures.storeMessasge('tenant_representative', signature_1.message);\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
