@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 6000,
+          "bottomRow": 5160,
           "containerStyle": "none",
           "snapRows": 109,
           "parentRowSpace": 1,
@@ -134,8 +134,8 @@
                 "parent",
                 "group"
               ],
-              "topRow": 513,
-              "bottomRow": 587,
+              "topRow": 429,
+              "bottomRow": 503,
               "parentRowSpace": 10,
               "type": "CONTAINER_WIDGET",
               "hideCard": false,
@@ -221,7 +221,11 @@
                               "boxShadow": "none",
                               "widgetName": "Button1",
                               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-                              "dynamicPropertyPathList": [],
+                              "dynamicPropertyPathList": [
+                                {
+                                  "key": "isVisible"
+                                }
+                              ],
                               "displayName": "Button",
                               "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
                               "searchTags": [
@@ -243,6 +247,9 @@
                                 },
                                 {
                                   "key": "borderRadius"
+                                },
+                                {
+                                  "key": "isVisible"
                                 }
                               ],
                               "text": "Click to sign",
@@ -252,7 +259,7 @@
                               "rightColumn": 64,
                               "isDefaultClickDisabled": true,
                               "widgetId": "5nwoj8qfev",
-                              "isVisible": false,
+                              "isVisible": "{{appsmith.store.tenant_representative ? true: false}}",
                               "recaptchaType": "V3",
                               "version": 1,
                               "parentId": "ryb3av60jx",
@@ -13316,8 +13323,8 @@
               "widgetName": "Image2",
               "displayName": "Image",
               "iconSVG": "/static/media/icon.52d8fb963abcb95c79b10f1553389f22.svg",
-              "topRow": 587,
-              "bottomRow": 592,
+              "topRow": 503,
+              "bottomRow": 508,
               "parentRowSpace": 10,
               "type": "IMAGE_WIDGET",
               "hideCard": false,
@@ -13393,6 +13400,220 @@
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "fontSize": "1rem"
+            },
+            {
+              "boxShadow": "none",
+              "widgetName": "tenant_representative_signatur",
+              "isCanvas": true,
+              "displayName": "Modal",
+              "iconSVG": "/static/media/icon.4975978e9a961fb0bfb4e38de7ecc7c5.svg",
+              "searchTags": [
+                "dialog",
+                "popup",
+                "notification"
+              ],
+              "topRow": 507,
+              "bottomRow": 531,
+              "parentRowSpace": 10,
+              "type": "MODAL_WIDGET",
+              "hideCard": false,
+              "shouldScrollContents": true,
+              "animateLoading": true,
+              "parentColumnSpace": 16,
+              "leftColumn": 12,
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "children": [
+                {
+                  "boxShadow": "none",
+                  "widgetName": "Canvas8",
+                  "displayName": "Canvas",
+                  "topRow": 0,
+                  "bottomRow": 650,
+                  "parentRowSpace": 1,
+                  "type": "CANVAS_WIDGET",
+                  "canExtend": true,
+                  "hideCard": true,
+                  "shouldScrollContents": false,
+                  "minHeight": 658,
+                  "parentColumnSpace": 1,
+                  "leftColumn": 0,
+                  "dynamicBindingPathList": [
+                    {
+                      "key": "borderRadius"
+                    },
+                    {
+                      "key": "accentColor"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+                      "widgetName": "Iframe1",
+                      "srcDoc": "<script>\n/*!\n * Signature Pad v4.0.9 | https://github.com/szimek/signature_pad\n * (c) 2022 Szymon Nowak | Released under the MIT license\n */\n\n(function (global, factory) {\n    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :\n    typeof define === 'function' && define.amd ? define(factory) :\n    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.SignaturePad = factory());\n})(this, (function () { 'use strict';\n\n    class Point {\n        constructor(x, y, pressure, time) {\n            if (isNaN(x) || isNaN(y)) {\n                throw new Error(`Point is invalid: (${x}, ${y})`);\n            }\n            this.x = +x;\n            this.y = +y;\n            this.pressure = pressure || 0;\n            this.time = time || Date.now();\n        }\n        distanceTo(start) {\n            return Math.sqrt(Math.pow(this.x - start.x, 2) + Math.pow(this.y - start.y, 2));\n        }\n        equals(other) {\n            return (this.x === other.x &&\n                this.y === other.y &&\n                this.pressure === other.pressure &&\n                this.time === other.time);\n        }\n        velocityFrom(start) {\n            return this.time !== start.time\n                ? this.distanceTo(start) / (this.time - start.time)\n                : 0;\n        }\n    }\n\n    class Bezier {\n        constructor(startPoint, control2, control1, endPoint, startWidth, endWidth) {\n            this.startPoint = startPoint;\n            this.control2 = control2;\n            this.control1 = control1;\n            this.endPoint = endPoint;\n            this.startWidth = startWidth;\n            this.endWidth = endWidth;\n        }\n        static fromPoints(points, widths) {\n            const c2 = this.calculateControlPoints(points[0], points[1], points[2]).c2;\n            const c3 = this.calculateControlPoints(points[1], points[2], points[3]).c1;\n            return new Bezier(points[1], c2, c3, points[2], widths.start, widths.end);\n        }\n        static calculateControlPoints(s1, s2, s3) {\n            const dx1 = s1.x - s2.x;\n            const dy1 = s1.y - s2.y;\n            const dx2 = s2.x - s3.x;\n            const dy2 = s2.y - s3.y;\n            const m1 = { x: (s1.x + s2.x) / 2.0, y: (s1.y + s2.y) / 2.0 };\n            const m2 = { x: (s2.x + s3.x) / 2.0, y: (s2.y + s3.y) / 2.0 };\n            const l1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);\n            const l2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);\n            const dxm = m1.x - m2.x;\n            const dym = m1.y - m2.y;\n            const k = l2 / (l1 + l2);\n            const cm = { x: m2.x + dxm * k, y: m2.y + dym * k };\n            const tx = s2.x - cm.x;\n            const ty = s2.y - cm.y;\n            return {\n                c1: new Point(m1.x + tx, m1.y + ty),\n                c2: new Point(m2.x + tx, m2.y + ty),\n            };\n        }\n        length() {\n            const steps = 10;\n            let length = 0;\n            let px;\n            let py;\n            for (let i = 0; i <= steps; i += 1) {\n                const t = i / steps;\n                const cx = this.point(t, this.startPoint.x, this.control1.x, this.control2.x, this.endPoint.x);\n                const cy = this.point(t, this.startPoint.y, this.control1.y, this.control2.y, this.endPoint.y);\n                if (i > 0) {\n                    const xdiff = cx - px;\n                    const ydiff = cy - py;\n                    length += Math.sqrt(xdiff * xdiff + ydiff * ydiff);\n                }\n                px = cx;\n                py = cy;\n            }\n            return length;\n        }\n        point(t, start, c1, c2, end) {\n            return (start * (1.0 - t) * (1.0 - t) * (1.0 - t))\n                + (3.0 * c1 * (1.0 - t) * (1.0 - t) * t)\n                + (3.0 * c2 * (1.0 - t) * t * t)\n                + (end * t * t * t);\n        }\n    }\n\n    class SignatureEventTarget {\n        constructor() {\n            try {\n                this._et = new EventTarget();\n            }\n            catch (error) {\n                this._et = document;\n            }\n        }\n        addEventListener(type, listener, options) {\n            this._et.addEventListener(type, listener, options);\n        }\n        dispatchEvent(event) {\n            return this._et.dispatchEvent(event);\n        }\n        removeEventListener(type, callback, options) {\n            this._et.removeEventListener(type, callback, options);\n        }\n    }\n\n    function throttle(fn, wait = 250) {\n        let previous = 0;\n        let timeout = null;\n        let result;\n        let storedContext;\n        let storedArgs;\n        const later = () => {\n            previous = Date.now();\n            timeout = null;\n            result = fn.apply(storedContext, storedArgs);\n            if (!timeout) {\n                storedContext = null;\n                storedArgs = [];\n            }\n        };\n        return function wrapper(...args) {\n            const now = Date.now();\n            const remaining = wait - (now - previous);\n            storedContext = this;\n            storedArgs = args;\n            if (remaining <= 0 || remaining > wait) {\n                if (timeout) {\n                    clearTimeout(timeout);\n                    timeout = null;\n                }\n                previous = now;\n                result = fn.apply(storedContext, storedArgs);\n                if (!timeout) {\n                    storedContext = null;\n                    storedArgs = [];\n                }\n            }\n            else if (!timeout) {\n                timeout = window.setTimeout(later, remaining);\n            }\n            return result;\n        };\n    }\n\n    class SignaturePad extends SignatureEventTarget {\n        constructor(canvas, options = {}) {\n            super();\n            this.canvas = canvas;\n            this._handleMouseDown = (event) => {\n                if (event.buttons === 1) {\n                    this._drawningStroke = true;\n                    this._strokeBegin(event);\n                }\n            };\n            this._handleMouseMove = (event) => {\n                if (this._drawningStroke) {\n                    this._strokeMoveUpdate(event);\n                }\n            };\n            this._handleMouseUp = (event) => {\n                if (event.buttons === 1 && this._drawningStroke) {\n                    this._drawningStroke = false;\n                    this._strokeEnd(event);\n                }\n            };\n            this._handleTouchStart = (event) => {\n                if (event.cancelable) {\n                    event.preventDefault();\n                }\n                if (event.targetTouches.length === 1) {\n                    const touch = event.changedTouches[0];\n                    this._strokeBegin(touch);\n                }\n            };\n            this._handleTouchMove = (event) => {\n                if (event.cancelable) {\n                    event.preventDefault();\n                }\n                const touch = event.targetTouches[0];\n                this._strokeMoveUpdate(touch);\n            };\n            this._handleTouchEnd = (event) => {\n                const wasCanvasTouched = event.target === this.canvas;\n                if (wasCanvasTouched) {\n                    if (event.cancelable) {\n                        event.preventDefault();\n                    }\n                    const touch = event.changedTouches[0];\n                    this._strokeEnd(touch);\n                }\n            };\n            this._handlePointerStart = (event) => {\n                this._drawningStroke = true;\n                event.preventDefault();\n                this._strokeBegin(event);\n            };\n            this._handlePointerMove = (event) => {\n                if (this._drawningStroke) {\n                    event.preventDefault();\n                    this._strokeMoveUpdate(event);\n                }\n            };\n            this._handlePointerEnd = (event) => {\n                if (this._drawningStroke) {\n                    event.preventDefault();\n                    this._drawningStroke = false;\n                    this._strokeEnd(event);\n                }\n            };\n            this.velocityFilterWeight = options.velocityFilterWeight || 0.7;\n            this.minWidth = options.minWidth || 0.5;\n            this.maxWidth = options.maxWidth || 2.5;\n            this.throttle = ('throttle' in options ? options.throttle : 16);\n            this.minDistance = ('minDistance' in options ? options.minDistance : 5);\n            this.dotSize = options.dotSize || 0;\n            this.penColor = options.penColor || 'black';\n            this.backgroundColor = options.backgroundColor || 'rgba(0,0,0,0)';\n            this._strokeMoveUpdate = this.throttle\n                ? throttle(SignaturePad.prototype._strokeUpdate, this.throttle)\n                : SignaturePad.prototype._strokeUpdate;\n            this._ctx = canvas.getContext('2d');\n            this.clear();\n            this.on();\n        }\n        clear() {\n            const { _ctx: ctx, canvas } = this;\n            ctx.fillStyle = this.backgroundColor;\n            ctx.clearRect(0, 0, canvas.width, canvas.height);\n            ctx.fillRect(0, 0, canvas.width, canvas.height);\n            this._data = [];\n            this._reset(this._getPointGroupOptions());\n            this._isEmpty = true;\n        }\n        fromDataURL(dataUrl, options = {}) {\n            return new Promise((resolve, reject) => {\n                const image = new Image();\n                const ratio = options.ratio || window.devicePixelRatio || 1;\n                const width = options.width || this.canvas.width / ratio;\n                const height = options.height || this.canvas.height / ratio;\n                const xOffset = options.xOffset || 0;\n                const yOffset = options.yOffset || 0;\n                this._reset(this._getPointGroupOptions());\n                image.onload = () => {\n                    this._ctx.drawImage(image, xOffset, yOffset, width, height);\n                    resolve();\n                };\n                image.onerror = (error) => {\n                    reject(error);\n                };\n                image.crossOrigin = 'anonymous';\n                image.src = dataUrl;\n                this._isEmpty = false;\n            });\n        }\n        toDataURL(type = 'image/png', encoderOptions) {\n            switch (type) {\n                case 'image/svg+xml':\n                    return this._toSVG();\n                default:\n                    return this.canvas.toDataURL(type, encoderOptions);\n            }\n        }\n        on() {\n            this.canvas.style.touchAction = 'none';\n            this.canvas.style.msTouchAction = 'none';\n            this.canvas.style.userSelect = 'none';\n            const isIOS = /Macintosh/.test(navigator.userAgent) && 'ontouchstart' in document;\n            if (window.PointerEvent && !isIOS) {\n                this._handlePointerEvents();\n            }\n            else {\n                this._handleMouseEvents();\n                if ('ontouchstart' in window) {\n                    this._handleTouchEvents();\n                }\n            }\n        }\n        off() {\n            this.canvas.style.touchAction = 'auto';\n            this.canvas.style.msTouchAction = 'auto';\n            this.canvas.style.userSelect = 'auto';\n            this.canvas.removeEventListener('pointerdown', this._handlePointerStart);\n            this.canvas.removeEventListener('pointermove', this._handlePointerMove);\n            this.canvas.ownerDocument.removeEventListener('pointerup', this._handlePointerEnd);\n            this.canvas.removeEventListener('mousedown', this._handleMouseDown);\n            this.canvas.removeEventListener('mousemove', this._handleMouseMove);\n            this.canvas.ownerDocument.removeEventListener('mouseup', this._handleMouseUp);\n            this.canvas.removeEventListener('touchstart', this._handleTouchStart);\n            this.canvas.removeEventListener('touchmove', this._handleTouchMove);\n            this.canvas.removeEventListener('touchend', this._handleTouchEnd);\n        }\n        isEmpty() {\n            return this._isEmpty;\n        }\n        fromData(pointGroups, { clear = true } = {}) {\n            if (clear) {\n                this.clear();\n            }\n            this._fromData(pointGroups, this._drawCurve.bind(this), this._drawDot.bind(this));\n            this._data = this._data.concat(pointGroups);\n        }\n        toData() {\n            return this._data;\n        }\n        _getPointGroupOptions(group) {\n            return {\n                penColor: group && 'penColor' in group ? group.penColor : this.penColor,\n                dotSize: group && 'dotSize' in group ? group.dotSize : this.dotSize,\n                minWidth: group && 'minWidth' in group ? group.minWidth : this.minWidth,\n                maxWidth: group && 'maxWidth' in group ? group.maxWidth : this.maxWidth,\n                velocityFilterWeight: group && 'velocityFilterWeight' in group\n                    ? group.velocityFilterWeight\n                    : this.velocityFilterWeight,\n            };\n        }\n        _strokeBegin(event) {\n            this.dispatchEvent(new CustomEvent('beginStroke', { detail: event }));\n            const pointGroupOptions = this._getPointGroupOptions();\n            const newPointGroup = Object.assign(Object.assign({}, pointGroupOptions), { points: [] });\n            this._data.push(newPointGroup);\n            this._reset(pointGroupOptions);\n            this._strokeUpdate(event);\n        }\n        _strokeUpdate(event) {\n            if (this._data.length === 0) {\n                this._strokeBegin(event);\n                return;\n            }\n            this.dispatchEvent(new CustomEvent('beforeUpdateStroke', { detail: event }));\n            const x = event.clientX;\n            const y = event.clientY;\n            const pressure = event.pressure !== undefined\n                ? event.pressure\n                : event.force !== undefined\n                    ? event.force\n                    : 0;\n            const point = this._createPoint(x, y, pressure);\n            const lastPointGroup = this._data[this._data.length - 1];\n            const lastPoints = lastPointGroup.points;\n            const lastPoint = lastPoints.length > 0 && lastPoints[lastPoints.length - 1];\n            const isLastPointTooClose = lastPoint\n                ? point.distanceTo(lastPoint) <= this.minDistance\n                : false;\n            const pointGroupOptions = this._getPointGroupOptions(lastPointGroup);\n            if (!lastPoint || !(lastPoint && isLastPointTooClose)) {\n                const curve = this._addPoint(point, pointGroupOptions);\n                if (!lastPoint) {\n                    this._drawDot(point, pointGroupOptions);\n                }\n                else if (curve) {\n                    this._drawCurve(curve, pointGroupOptions);\n                }\n                lastPoints.push({\n                    time: point.time,\n                    x: point.x,\n                    y: point.y,\n                    pressure: point.pressure,\n                });\n            }\n            this.dispatchEvent(new CustomEvent('afterUpdateStroke', { detail: event }));\n        }\n        _strokeEnd(event) {\n            this._strokeUpdate(event);\n            this.dispatchEvent(new CustomEvent('endStroke', { detail: event }));\n        }\n        _handlePointerEvents() {\n            this._drawningStroke = false;\n            this.canvas.addEventListener('pointerdown', this._handlePointerStart);\n            this.canvas.addEventListener('pointermove', this._handlePointerMove);\n            this.canvas.ownerDocument.addEventListener('pointerup', this._handlePointerEnd);\n        }\n        _handleMouseEvents() {\n            this._drawningStroke = false;\n            this.canvas.addEventListener('mousedown', this._handleMouseDown);\n            this.canvas.addEventListener('mousemove', this._handleMouseMove);\n            this.canvas.ownerDocument.addEventListener('mouseup', this._handleMouseUp);\n        }\n        _handleTouchEvents() {\n            this.canvas.addEventListener('touchstart', this._handleTouchStart);\n            this.canvas.addEventListener('touchmove', this._handleTouchMove);\n            this.canvas.addEventListener('touchend', this._handleTouchEnd);\n        }\n        _reset(options) {\n            this._lastPoints = [];\n            this._lastVelocity = 0;\n            this._lastWidth = (options.minWidth + options.maxWidth) / 2;\n            this._ctx.fillStyle = options.penColor;\n        }\n        _createPoint(x, y, pressure) {\n            const rect = this.canvas.getBoundingClientRect();\n            return new Point(x - rect.left, y - rect.top, pressure, new Date().getTime());\n        }\n        _addPoint(point, options) {\n            const { _lastPoints } = this;\n            _lastPoints.push(point);\n            if (_lastPoints.length > 2) {\n                if (_lastPoints.length === 3) {\n                    _lastPoints.unshift(_lastPoints[0]);\n                }\n                const widths = this._calculateCurveWidths(_lastPoints[1], _lastPoints[2], options);\n                const curve = Bezier.fromPoints(_lastPoints, widths);\n                _lastPoints.shift();\n                return curve;\n            }\n            return null;\n        }\n        _calculateCurveWidths(startPoint, endPoint, options) {\n            const velocity = options.velocityFilterWeight * endPoint.velocityFrom(startPoint) +\n                (1 - options.velocityFilterWeight) * this._lastVelocity;\n            const newWidth = this._strokeWidth(velocity, options);\n            const widths = {\n                end: newWidth,\n                start: this._lastWidth,\n            };\n            this._lastVelocity = velocity;\n            this._lastWidth = newWidth;\n            return widths;\n        }\n        _strokeWidth(velocity, options) {\n            return Math.max(options.maxWidth / (velocity + 1), options.minWidth);\n        }\n        _drawCurveSegment(x, y, width) {\n            const ctx = this._ctx;\n            ctx.moveTo(x, y);\n            ctx.arc(x, y, width, 0, 2 * Math.PI, false);\n            this._isEmpty = false;\n        }\n        _drawCurve(curve, options) {\n            const ctx = this._ctx;\n            const widthDelta = curve.endWidth - curve.startWidth;\n            const drawSteps = Math.ceil(curve.length()) * 2;\n            ctx.beginPath();\n            ctx.fillStyle = options.penColor;\n            for (let i = 0; i < drawSteps; i += 1) {\n                const t = i / drawSteps;\n                const tt = t * t;\n                const ttt = tt * t;\n                const u = 1 - t;\n                const uu = u * u;\n                const uuu = uu * u;\n                let x = uuu * curve.startPoint.x;\n                x += 3 * uu * t * curve.control1.x;\n                x += 3 * u * tt * curve.control2.x;\n                x += ttt * curve.endPoint.x;\n                let y = uuu * curve.startPoint.y;\n                y += 3 * uu * t * curve.control1.y;\n                y += 3 * u * tt * curve.control2.y;\n                y += ttt * curve.endPoint.y;\n                const width = Math.min(curve.startWidth + ttt * widthDelta, options.maxWidth);\n                this._drawCurveSegment(x, y, width);\n            }\n            ctx.closePath();\n            ctx.fill();\n        }\n        _drawDot(point, options) {\n            const ctx = this._ctx;\n            const width = options.dotSize > 0\n                ? options.dotSize\n                : (options.minWidth + options.maxWidth) / 2;\n            ctx.beginPath();\n            this._drawCurveSegment(point.x, point.y, width);\n            ctx.closePath();\n            ctx.fillStyle = options.penColor;\n            ctx.fill();\n        }\n        _fromData(pointGroups, drawCurve, drawDot) {\n            for (const group of pointGroups) {\n                const { points } = group;\n                const pointGroupOptions = this._getPointGroupOptions(group);\n                if (points.length > 1) {\n                    for (let j = 0; j < points.length; j += 1) {\n                        const basicPoint = points[j];\n                        const point = new Point(basicPoint.x, basicPoint.y, basicPoint.pressure, basicPoint.time);\n                        if (j === 0) {\n                            this._reset(pointGroupOptions);\n                        }\n                        const curve = this._addPoint(point, pointGroupOptions);\n                        if (curve) {\n                            drawCurve(curve, pointGroupOptions);\n                        }\n                    }\n                }\n                else {\n                    this._reset(pointGroupOptions);\n                    drawDot(points[0], pointGroupOptions);\n                }\n            }\n        }\n        _toSVG() {\n            const pointGroups = this._data;\n            const ratio = Math.max(window.devicePixelRatio || 1, 1);\n            const minX = 0;\n            const minY = 0;\n            const maxX = this.canvas.width / ratio;\n            const maxY = this.canvas.height / ratio;\n            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');\n            svg.setAttribute('width', this.canvas.width.toString());\n            svg.setAttribute('height', this.canvas.height.toString());\n            this._fromData(pointGroups, (curve, { penColor }) => {\n                const path = document.createElement('path');\n                if (!isNaN(curve.control1.x) &&\n                    !isNaN(curve.control1.y) &&\n                    !isNaN(curve.control2.x) &&\n                    !isNaN(curve.control2.y)) {\n                    const attr = `M ${curve.startPoint.x.toFixed(3)},${curve.startPoint.y.toFixed(3)} ` +\n                        `C ${curve.control1.x.toFixed(3)},${curve.control1.y.toFixed(3)} ` +\n                        `${curve.control2.x.toFixed(3)},${curve.control2.y.toFixed(3)} ` +\n                        `${curve.endPoint.x.toFixed(3)},${curve.endPoint.y.toFixed(3)}`;\n                    path.setAttribute('d', attr);\n                    path.setAttribute('stroke-width', (curve.endWidth * 2.25).toFixed(3));\n                    path.setAttribute('stroke', penColor);\n                    path.setAttribute('fill', 'none');\n                    path.setAttribute('stroke-linecap', 'round');\n                    svg.appendChild(path);\n                }\n            }, (point, { penColor, dotSize, minWidth, maxWidth }) => {\n                const circle = document.createElement('circle');\n                const size = dotSize > 0 ? dotSize : (minWidth + maxWidth) / 2;\n                circle.setAttribute('r', size.toString());\n                circle.setAttribute('cx', point.x.toString());\n                circle.setAttribute('cy', point.y.toString());\n                circle.setAttribute('fill', penColor);\n                svg.appendChild(circle);\n            });\n            const prefix = 'data:image/svg+xml;base64,';\n            const header = '<svg' +\n                ' xmlns=\"http://www.w3.org/2000/svg\"' +\n                ' xmlns:xlink=\"http://www.w3.org/1999/xlink\"' +\n                ` viewBox=\"${minX} ${minY} ${maxX} ${maxY}\"` +\n                ` width=\"${maxX}\"` +\n                ` height=\"${maxY}\"` +\n                '>';\n            let body = svg.innerHTML;\n            if (body === undefined) {\n                const dummy = document.createElement('dummy');\n                const nodes = svg.childNodes;\n                dummy.innerHTML = '';\n                for (let i = 0; i < nodes.length; i += 1) {\n                    dummy.appendChild(nodes[i].cloneNode(true));\n                }\n                body = dummy.innerHTML;\n            }\n            const footer = '</svg>';\n            const data = header + body + footer;\n            return prefix + btoa(data);\n        }\n    }\n\n    return SignaturePad;\n\n}));\n//# sourceMappingURL=signature_pad.umd.js.map\n</script>\n<style>\n.wrapper {\n  position: relative;\n  width: 100%;\n  -moz-user-select: none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.signature-pad {\n  border:1px solid black;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width:100%;\n  min-height: 300px;\n  background-color: white;\n}\n\nbutton {\nmargin :10px;\n}\n</style>\n<button id=\"save-png\">Save as PNG</button>\n<button id=\"save-jpeg\">Save as JPEG</button>\n<button id=\"save-svg\">Save as SVG</button>\n<button id=\"draw\">Draw</button>\n<button id=\"erase\">Erase</button>\n<button id=\"clear\">Clear</button>\n<div id=\"wrapper\" class=\"wrapper\">\n  <canvas id=\"signature-pad\" class=\"signature-pad\" width=400 height=200></canvas>\n</div>\n\n\n<script>\nvar canvas = document.getElementById('signature-pad');\nvar wrapper = document.getElementById('wrapper');\n\n// Adjust canvas coordinate space taking into account pixel ratio,\n// to make it look crisp on mobile devices.\n// This also causes canvas to be cleared.\nfunction resizeCanvas() {\n    // When zoomed out to less than 100%, for some very strange reason,\n    // some browsers report devicePixelRatio as less than 1\n    // and only part of the canvas is cleared then.\n    var ratio =  Math.max(window.devicePixelRatio || 1, 1);\n    canvas.width = canvas.offsetWidth * ratio;\n    canvas.height = canvas.offsetHeight * ratio;\n    wrapper.style.height = (canvas.height + 10) / ratio + 'px';\n    canvas.getContext(\"2d\").scale(ratio, ratio);\n\n}\n\nwindow.onresize = resizeCanvas;\nwindow.parent.onresize = resizeCanvas;\nresizeCanvas();\n\nvar signaturePad = new SignaturePad(canvas, {\n  backgroundColor: 'rgb(255, 255, 255)' // necessary for saving image as JPEG; can be removed is only saving as PNG or SVG\n});\n\ndocument.getElementById('save-png').addEventListener('click', function () {\n  if (signaturePad.isEmpty()) {\n    return alert(\"Please provide a signature first.\");\n  }\n  \n  var data = signaturePad.toDataURL('image/png');\n  console.log(data);\n  window.parent.postMessage(data,'*');\n});\n\ndocument.getElementById('save-jpeg').addEventListener('click', function () {\n  if (signaturePad.isEmpty()) {\n    return alert(\"Please provide a signature first.\");\n  }\n\n  var data = signaturePad.toDataURL('image/jpeg');\n  console.log(data);\n  window.open(data);\n});\n\ndocument.getElementById('save-svg').addEventListener('click', function () {\n  if (signaturePad.isEmpty()) {\n    return alert(\"Please provide a signature first.\");\n  }\n\n  var data = signaturePad.toDataURL('image/svg+xml');\n  console.log(data);\n  console.log(atob(data.split(',')[1]));\n  window.open(data);\n});\n\ndocument.getElementById('clear').addEventListener('click', function () {\n  signaturePad.clear();\n});\n\ndocument.getElementById('draw').addEventListener('click', function () {\n  var ctx = canvas.getContext('2d');\n  console.log(ctx.globalCompositeOperation);\n  ctx.globalCompositeOperation = 'source-over'; // default value\n});\n\ndocument.getElementById('erase').addEventListener('click', function () {\n  var ctx = canvas.getContext('2d');\n  ctx.globalCompositeOperation = 'destination-out';\n});\n\n</script>",
+                      "displayName": "Iframe",
+                      "iconSVG": "/static/media/icon.34169b6acebc8ace125dd1f638974aae.svg",
+                      "searchTags": [
+                        "embed"
+                      ],
+                      "topRow": 7,
+                      "bottomRow": 62,
+                      "parentRowSpace": 10,
+                      "source": "",
+                      "type": "IFRAME_WIDGET",
+                      "title": "Iframe",
+                      "hideCard": false,
+                      "borderOpacity": 100,
+                      "animateLoading": true,
+                      "parentColumnSpace": 22.078125,
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onMessageReceived"
+                        },
+                        {
+                          "key": "onSrcDocChanged"
+                        }
+                      ],
+                      "leftColumn": 0,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "boxShadow"
+                        }
+                      ],
+                      "borderWidth": 1,
+                      "key": "nt3bnayj5e",
+                      "isDeprecated": false,
+                      "rightColumn": 64,
+                      "widgetId": "fletd5u1uc",
+                      "isVisible": true,
+                      "version": 1,
+                      "parentId": "a1b2ir6w9k",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "onMessageReceived": "{{JSObject1.myFun1()}}",
+                      "onSrcDocChanged": "{{JSObject1.myFun1()}}"
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "IconButton1",
+                      "onClick": "{{closeModal('tenant_representative_signatur')}}",
+                      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "displayName": "Icon Button",
+                      "iconSVG": "/static/media/icon.1a0c634ac75f9fa6b6ae7a8df882a3ba.svg",
+                      "searchTags": [
+                        "click",
+                        "submit"
+                      ],
+                      "topRow": 0,
+                      "bottomRow": 4,
+                      "type": "ICON_BUTTON_WIDGET",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "leftColumn": 58,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "buttonColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        }
+                      ],
+                      "iconSize": 24,
+                      "isDisabled": false,
+                      "key": "7306akdstq",
+                      "isDeprecated": false,
+                      "rightColumn": 64,
+                      "iconName": "cross",
+                      "widgetId": "t5c49euzd7",
+                      "isVisible": true,
+                      "version": 1,
+                      "parentId": "a1b2ir6w9k",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "buttonVariant": "TERTIARY"
+                    },
+                    {
+                      "widgetName": "Text11",
+                      "displayName": "Text",
+                      "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
+                      "searchTags": [
+                        "typography",
+                        "paragraph",
+                        "label"
+                      ],
+                      "topRow": 1,
+                      "bottomRow": 5,
+                      "type": "TEXT_WIDGET",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "overflow": "NONE",
+                      "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+                      "dynamicTriggerPathList": [],
+                      "leftColumn": 1,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "fontFamily"
+                        },
+                        {
+                          "key": "borderRadius"
+                        }
+                      ],
+                      "shouldTruncate": false,
+                      "truncateButtonColor": "#FFC13D",
+                      "text": "Tenant Representative Signature",
+                      "key": "lpf62oks0w",
+                      "isDeprecated": false,
+                      "rightColumn": 58,
+                      "textAlign": "LEFT",
+                      "widgetId": "wlkkbcb99w",
+                      "isVisible": true,
+                      "fontStyle": "BOLD",
+                      "textColor": "#231F20",
+                      "version": 1,
+                      "parentId": "a1b2ir6w9k",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "fontSize": "1.5rem"
+                    }
+                  ],
+                  "isDisabled": false,
+                  "key": "kfg7tyc05n",
+                  "isDeprecated": false,
+                  "rightColumn": 384,
+                  "detachFromLayout": true,
+                  "widgetId": "a1b2ir6w9k",
+                  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "isVisible": true,
+                  "version": 1,
+                  "parentId": "533zxspiwg",
+                  "renderMode": "CANVAS",
+                  "isLoading": false,
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                }
+              ],
+              "key": "4avjq67m1i",
+              "height": 658,
+              "isDeprecated": false,
+              "rightColumn": 36,
+              "detachFromLayout": true,
+              "widgetId": "533zxspiwg",
+              "canOutsideClickClose": true,
+              "canEscapeKeyClose": true,
+              "version": 2,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "width": 1596
             }
           ]
         },
