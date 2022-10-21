@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "file => {\n  let temp = file.data + \"\";\n  temp = temp.split(\";base64,\");\n  let mime = temp[0].split('/');\n  mime = mime[1];\n  let binary = temp[1];\n  return {\n    mime: mime,\n    binary: binary,\n    name: file.name\n  };\n}",
+      "body": "file => {\n  let temp = file.data + \"\";\n  temp = temp.split(\";base64,\");\n  let mime = temp[0].toString().replace(\"data:\", \"\");\n  let binary = temp[1];\n  return {\n    mimeType: mime,\n    documentBody: binary,\n    filename: file.name\n  };\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [
         {}
@@ -36,7 +36,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "file => {\n  let temp = file.data + \"\";\n  temp = temp.split(\";base64,\");\n  let mime = temp[0].split('/');\n  mime = mime[1];\n  let binary = temp[1];\n  return {\n    mime: mime,\n    binary: binary,\n    name: file.name\n  };\n}"
+      "file => {\n  let temp = file.data + \"\";\n  temp = temp.split(\";base64,\");\n  let mime = temp[0].toString().replace(\"data:\", \"\");\n  let binary = temp[1];\n  return {\n    mimeType: mime,\n    documentBody: binary,\n    filename: file.name\n  };\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
