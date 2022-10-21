@@ -16,7 +16,7 @@
     "pageId": "FORM 6A - SITE ACCESS REQUEST ",
     "collectionId": "FORM 6A - SITE ACCESS REQUEST _LoadJS",
     "actionConfiguration": {
-      "timeoutInMillisecond": 0,
+      "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "async () => {\n  console.log(body);\n}",
