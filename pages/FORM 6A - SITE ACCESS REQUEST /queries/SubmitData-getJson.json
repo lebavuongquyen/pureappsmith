@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "a",
-    "fullyQualifiedName": "SubmitData.a",
+    "name": "getJson",
+    "fullyQualifiedName": "SubmitData.getJson",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  return 1;\n}",
+      "body": "() => {\n  return {\n    name: tenant_name.selectedOptionLabel,\n    tc: tc.text,\n    position: position.text,\n    date: date.formattedDate,\n    unit_no: unit_no.selectedOptionLabel,\n    tenant_representative: tenant_representative.text,\n    email: email.text,\n    contact_number: contact_number.text\n  };\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  return 1;\n}"
+      "() => {\n  return {\n    name: tenant_name.selectedOptionLabel,\n    tc: tc.text,\n    position: position.text,\n    date: date.formattedDate,\n    unit_no: unit_no.selectedOptionLabel,\n    tenant_representative: tenant_representative.text,\n    email: email.text,\n    contact_number: contact_number.text\n  };\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "FORM 6A - SITE ACCESS REQUEST _SubmitData.a",
+  "id": "FORM 6A - SITE ACCESS REQUEST _SubmitData.getJson",
   "deleted": false,
   "gitSyncId": "633ea50989020c7ac29654e2_63568afdf6cdb970519c1533"
 }

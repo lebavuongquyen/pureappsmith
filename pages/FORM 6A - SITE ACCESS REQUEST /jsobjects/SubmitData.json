@@ -6,7 +6,7 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\tjsonData : {\n\t\tname : tenant_name.selectedOptionLabel,\n\t\ttc: tc.text,\n\t\tposition: position.text,\n\t\tdate:date.formattedDate,\n\t\tunit_no:unit_no.selectedOptionLabel,\n\t\ttenant_representative:tenant_representative.text,\n\t\temail:email.text,\n\t\tcontact_number:contact_number.text\n\t},\n\ta : () => {\n\t\treturn 1;\n\t}\n}",
+    "body": "export default {\n\tjsonData : {\n\t\tname : tenant_name.selectedOptionLabel,\n\t\ttc: tc.text,\n\t\tposition: position.text,\n\t\tdate:date.formattedDate,\n\t\tunit_no:unit_no.selectedOptionLabel,\n\t\ttenant_representative:tenant_representative.text,\n\t\temail:email.text,\n\t\tcontact_number:contact_number.text\n\t},\n\tgetJson : () => {\n\t\treturn  {\n\t\t\tname : tenant_name.selectedOptionLabel,\n\t\t\ttc: tc.text,\n\t\t\tposition: position.text,\n\t\t\tdate:date.formattedDate,\n\t\t\tunit_no:unit_no.selectedOptionLabel,\n\t\t\ttenant_representative:tenant_representative.text,\n\t\t\temail:email.text,\n\t\t\tcontact_number:contact_number.text\n\t\t};\n\t}\n}",
     "variables": [
       {
         "name": "jsonData",
