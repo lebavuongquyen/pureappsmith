@@ -6,39 +6,11 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\tjson : {\n\t\tname : tenant_name.selectedOptionLabel,\n\t\ttc: tc.text,\n\t\tposition: position.text,\n\t\tdate:date.formattedDate,\n\t\tunit_no:unit_no.selectedOptionLabel,\n\t\ttenant_representative:tenant_representative.text,\n\t\temail:email.text,\n\t\tcontact_number:contact_number.text\n\t}\n}",
+    "body": "export default {\n\tjsonData : {\n\t\tname : tenant_name.selectedOptionLabel,\n\t\ttc: tc.text,\n\t\tposition: position.text,\n\t\tdate:date.formattedDate,\n\t\tunit_no:unit_no.selectedOptionLabel,\n\t\ttenant_representative:tenant_representative.text,\n\t\temail:email.text,\n\t\tcontact_number:contact_number.text\n\t},\n\ta : () => {\n\t\treturn 1;\n\t}\n}",
     "variables": [
       {
-        "name": "name",
-        "value": "tenant_name.selectedOptionLabel"
-      },
-      {
-        "name": "tc",
-        "value": "tc.text"
-      },
-      {
-        "name": "position",
-        "value": "position.text"
-      },
-      {
-        "name": "date",
-        "value": "date.formattedDate"
-      },
-      {
-        "name": "unit_no",
-        "value": "unit_no.selectedOptionLabel"
-      },
-      {
-        "name": "tenant_representative",
-        "value": "tenant_representative.text"
-      },
-      {
-        "name": "email",
-        "value": "email.text"
-      },
-      {
-        "name": "contact_number",
-        "value": "contact_number.text"
+        "name": "jsonData",
+        "value": "{\n  name: tenant_name.selectedOptionLabel,\n  tc: tc.text,\n  position: position.text,\n  date: date.formattedDate,\n  unit_no: unit_no.selectedOptionLabel,\n  tenant_representative: tenant_representative.text,\n  email: email.text,\n  contact_number: contact_number.text\n}"
       }
     ]
   },
