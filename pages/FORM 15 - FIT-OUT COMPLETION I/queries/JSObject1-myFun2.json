@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getItems",
-    "fullyQualifiedName": "Units.getItems",
+    "name": "myFun2",
+    "fullyQualifiedName": "JSObject1.myFun2",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,38 +13,36 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "TIF",
-    "collectionId": "TIF_Units",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "collectionId": "FORM 15 - FIT-OUT COMPLETION I_JSObject1",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}",
+      "body": "async () => {}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "clientSideExecution": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
       }
     ],
-    "isValid": false,
-    "invalids": [
-      "Unable to find plugin 613a26d921750e4b557a9241"
-    ],
+    "isValid": true,
+    "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
+      "async () => {}"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "TIF_Units.getItems",
+  "id": "FORM 15 - FIT-OUT COMPLETION I_JSObject1.myFun2",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bb639c99f19072638d4f9"
+  "gitSyncId": "633ea50989020c7ac29654e2_635268c931cf9c0f4917d506"
 }
