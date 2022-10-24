@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "options",
-    "fullyQualifiedName": "Units.options",
+    "name": "getUnitType",
+    "fullyQualifiedName": "Tenants.getUnitType",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,13 +13,13 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "TIF",
-    "collectionId": "TIF_Units",
+    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
+    "collectionId": "FORM 6A - SITE ACCESS REQUEST _Tenants",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}",
+      "body": "id => {\n  return Tenants.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}"
+      "id => {\n  return Tenants.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "TIF_Units.options",
+  "id": "FORM 6A - SITE ACCESS REQUEST _Tenants.getUnitType",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_634bbbec1023591fa1a9d4a0"
+  "gitSyncId": "633ea50989020c7ac29654e2_635680a9dc264920d5e28935"
 }

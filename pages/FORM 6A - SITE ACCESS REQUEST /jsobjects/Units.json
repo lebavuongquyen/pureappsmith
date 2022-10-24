@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "Units",
+    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\titems: Get_Units.data,\n\tselectedItem : {},\n\tgetItems: async () => {\n\t\t//use async-await or promises\n\t\tif(!Get_Units.data) {\n\t\t\tawait Get_Units.run();\n\t\t}\n\t\tthis.items = Get_Units.data;\n\t\treturn this.items;\n\t},\n\toptions : () => {\n\t\tlet options = [];\n\t\tif(this.items) {\n\t\t\tthis.items.forEach(function(item){\n\t\t\t\toptions.push({\n\t\t\t\t\tlabel : item.pp_name,\n\t\t\t\t\tvalue : item.pp_unitid\n\t\t\t\t});\n\t\t\t});\n\t\t}\n\t\treturn options;\n\t},\n\tgetItem: (id) => {\n\t\tif(id && !this.selectedItem[id]) {\n\t\t\tthis.selectedItem[id] =  this.items.find((item) => {return item.pp_unitid === id}) || {};\n\t\t}\n\t\treturn id ? this.selectedItem[id] : {};\n\t},\n\tgetGLA:(id) => {\n\t\treturn this.getItem(id)[\"pp_gla@OData.Community.Display.V1.FormattedValue\"] || \"\";\n\t},\n\tgetUnitType:(id) => {\n\t\treturn this.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n\t},\n\tgetLevel:(id) => {\n\t\treturn this.getItem(id)[\"_pp_level_value@OData.Community.Display.V1.FormattedValue\"] || \"\";\n\t},\n\tgetFormData : () => {\n\t\tlet _formData = {\n\t\t\tname : input_tenant_trading_name.text,\n\t\t\tattachment : file_attachments.files[0] ? AttachmentObject.format(file_attachments.files[0]) : null,\n\t\t\ttenant_trading_name:input_tenant_trading_name.text,\n\t\t\tunit : unit_no.selectedOptionValue,\n\t\t\tdescription : input_additional_information.text\n\t\t};\n\t\tconsole.log(_formData);\n\t\treturn _formData;\n\t}\n}",
+    "variables": [
+      {
+        "name": "items",
+        "value": "Get_Units.data"
+      },
+      {
+        "name": "selectedItem",
+        "value": "{}"
+      }
+    ]
+  },
+  "id": "FORM 6A - SITE ACCESS REQUEST _Units",
+  "deleted": false,
+  "gitSyncId": "633ea50989020c7ac29654e2_635680424b1a8d4291238a78"
+}
