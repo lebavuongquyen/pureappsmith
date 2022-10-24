@@ -25,7 +25,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{{\nSubmitData.jsonData\n}}",
+      "body": "{{\nSubmitData.getJson()\n}}",
       "bodyFormData": [
         {
           "key": "name",
@@ -105,7 +105,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "SubmitData.jsonData",
+      "SubmitData.getJson()",
       "contact_number.text",
       "date.formattedDate",
       "email.text",
