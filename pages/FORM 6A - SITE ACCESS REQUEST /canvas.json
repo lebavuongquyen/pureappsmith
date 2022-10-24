@@ -5163,7 +5163,7 @@
                       ],
                       "labelPosition": "Left",
                       "labelStyle": "",
-                      "inputType": "EMAIL",
+                      "inputType": "TEXT",
                       "placeholderText": "...",
                       "isDisabled": false,
                       "key": "zcpt3la9vz",
