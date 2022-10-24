@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "SubmitData",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tgetJson : () => {\n\t\treturn  {\n\t\t\tname : tenant_name.selectedOptionLabel,\n\t\t\ttc: tc.text,\n\t\t\tposition: position.text,\n\t\t\tdate:date.formattedDate,\n\t\t\tunit_no:unit_no.selectedOptionLabel,\n\t\t\ttenant_representative:tenant_representative.text,\n\t\t\temail:email.text,\n\t\t\tcontact_number:contact_number.text,\n\t\t\ttc_signature: appsmith.store.tc ? appsmith.store.tc.replace('data\\:image\\/png\\;base64\\,' , '') : \"\"\n\t\t};\n\t}\n}",
+    "variables": []
+  },
+  "id": "FORM 15 - FIT-OUT COMPLETION I_SubmitData",
+  "deleted": false,
+  "gitSyncId": "633ea50989020c7ac29654e2_63569a5c31cf9c0f49180647"
+}

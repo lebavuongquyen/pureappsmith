@@ -16,7 +16,7 @@
     "pageId": "FORM 6A - SITE ACCESS REQUEST ",
     "collectionId": "FORM 6A - SITE ACCESS REQUEST _Units",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}",
@@ -43,5 +43,5 @@
   },
   "id": "FORM 6A - SITE ACCESS REQUEST _Units.options",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_635680484b1a8d4291238a7c"
+  "gitSyncId": "633ea50989020c7ac29654e2_63569bffdc264920d5e28bc9"
 }

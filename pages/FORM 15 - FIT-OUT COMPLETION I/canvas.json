@@ -14862,7 +14862,7 @@
                   "widgetName": "Canvas6",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 390,
+                  "bottomRow": 400,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": false,
@@ -14881,7 +14881,58 @@
                   "children": [
                     {
                       "boxShadow": "none",
-                      "widgetName": "input_lease_teamCopy1Copy",
+                      "widgetName": "tc",
+                      "displayName": "Input",
+                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "searchTags": [
+                        "form",
+                        "text input_attachments_cr_form",
+                        "number",
+                        "textarea"
+                      ],
+                      "topRow": 26,
+                      "bottomRow": 32,
+                      "parentRowSpace": 10,
+                      "labelWidth": "3",
+                      "autoFocus": false,
+                      "type": "INPUT_WIDGET_V2",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 24.6328125,
+                      "dynamicTriggerPathList": [],
+                      "resetOnSubmit": true,
+                      "leftColumn": 14,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        }
+                      ],
+                      "labelPosition": "Left",
+                      "labelStyle": "",
+                      "inputType": "TEXT",
+                      "placeholderText": "...",
+                      "isDisabled": false,
+                      "key": "zcpt3la9vz",
+                      "labelTextSize": "0.875rem",
+                      "isRequired": false,
+                      "isDeprecated": false,
+                      "rightColumn": 36,
+                      "widgetId": "fdft5xuhsd",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "isVisible": true,
+                      "label": "Mr/Ms:",
+                      "version": 2,
+                      "parentId": "5l3o56acba",
+                      "labelAlignment": "left",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "0px",
+                      "iconAlign": "left",
+                      "defaultText": ""
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "position",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -14932,7 +14983,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "input_lease_teamCopy1",
+                      "widgetName": "contact_number",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -15225,63 +15276,6 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "select_unit_noCopyCopy",
-                      "isFilterable": true,
-                      "displayName": "Select",
-                      "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
-                      "labelText": "Mr/Ms:",
-                      "searchTags": [
-                        "dropdown"
-                      ],
-                      "topRow": 25,
-                      "bottomRow": 31,
-                      "parentRowSpace": 10,
-                      "labelWidth": 5,
-                      "type": "SELECT_WIDGET",
-                      "serverSideFiltering": false,
-                      "hideCard": false,
-                      "defaultOptionValue": "",
-                      "animateLoading": true,
-                      "parentColumnSpace": 25.75,
-                      "dynamicTriggerPathList": [
-                        {
-                          "key": "onOptionChange"
-                        }
-                      ],
-                      "leftColumn": 14,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "accentColor"
-                        },
-                        {
-                          "key": "borderRadius"
-                        },
-                        {
-                          "key": "options"
-                        }
-                      ],
-                      "labelPosition": "Left",
-                      "options": "{{Units.options()}}",
-                      "placeholderText": "Select option",
-                      "isDisabled": false,
-                      "key": "7ckyu4mq35",
-                      "labelTextSize": "0.875rem",
-                      "isRequired": false,
-                      "isDeprecated": false,
-                      "rightColumn": 36,
-                      "widgetId": "2bso82szgm",
-                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "isVisible": true,
-                      "version": 1,
-                      "parentId": "5l3o56acba",
-                      "labelAlignment": "left",
-                      "renderMode": "CANVAS",
-                      "isLoading": false,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',select_unit_no.selectedOptionValue)}}"
-                    },
-                    {
-                      "boxShadow": "none",
                       "widgetName": "Container8CopyCopyCopy3CopyCopy",
                       "borderColor": "{{appsmith.theme.colors.primaryColor}}",
                       "isCanvas": true,
@@ -15407,7 +15401,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "input_lease_teamCopy",
+                      "widgetName": "email",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -15583,7 +15577,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "select_unit_noCopy",
+                      "widgetName": "tenant_name",
                       "isFilterable": true,
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
@@ -15619,7 +15613,7 @@
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": "{{Units.options()}}",
+                      "options": "{{Tenants.options()}}",
                       "placeholderText": "Select option",
                       "isDisabled": false,
                       "key": "7ckyu4mq35",
@@ -15636,7 +15630,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',select_unit_no.selectedOptionValue)}}"
+                      "onOptionChange": "{{storeValue('unitId',unit_no.selectedOptionValue)}}"
                     },
                     {
                       "boxShadow": "none",
@@ -15882,7 +15876,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "input_lease_team",
+                      "widgetName": "tenant_representative",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -16304,7 +16298,7 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "select_unit_no",
+                      "widgetName": "unit_no",
                       "isFilterable": true,
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
@@ -16357,11 +16351,11 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',select_unit_no.selectedOptionValue)}}"
+                      "onOptionChange": "{{storeValue('unitId',unit_no.selectedOptionValue)}}"
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "DatePicker1",
+                      "widgetName": "date",
                       "minDate": "1920-12-31T18:30:00.000Z",
                       "dateFormat": "DD/MM/YYYY",
                       "displayName": "DatePicker",
@@ -16950,6 +16944,7 @@
               "resetFormOnClick": false,
               "boxShadow": "none",
               "widgetName": "Button2",
+              "onClick": "{{submit.run(() => showAlert('Success','success'), () => showAlert('Error','error'))}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
               "displayName": "Button",
               "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -16964,6 +16959,11 @@
               "hideCard": false,
               "animateLoading": true,
               "parentColumnSpace": 26.0625,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
               "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
@@ -16993,7 +16993,50 @@
             }
           ]
         },
-        "layoutOnLoadActions": [],
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "FORM 15 - FIT-OUT COMPLETION I_Get_Tenants",
+              "name": "Get_Tenants",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "FORM 15 - FIT-OUT COMPLETION I_Get_Units",
+              "name": "Get_Units",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "FORM 15 - FIT-OUT COMPLETION I_Tenants.getItems",
+              "name": "Tenants.getItems",
+              "collectionId": "FORM 15 - FIT-OUT COMPLETION I_Tenants",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  if (!Get_Tenants.data) {\n    await Get_Tenants.run();\n  }\n  Tenants.items = Get_Tenants.data;\n  return Tenants.items;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "FORM 15 - FIT-OUT COMPLETION I_Units.getItems",
+              "name": "Units.getItems",
+              "collectionId": "FORM 15 - FIT-OUT COMPLETION I_Units",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "FORM 15 - FIT-OUT COMPLETION I",

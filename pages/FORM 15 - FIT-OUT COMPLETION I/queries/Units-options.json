@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getItem",
-    "fullyQualifiedName": "Tenants.getItem",
+    "name": "options",
+    "fullyQualifiedName": "Units.options",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,13 +13,13 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
-    "collectionId": "FORM 6A - SITE ACCESS REQUEST _Tenants",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "collectionId": "FORM 15 - FIT-OUT COMPLETION I_Units",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  if (id && !Tenants.selectedItem[id]) {\n    Tenants.selectedItem[id] = Tenants.items.find(item => {\n      return item.pp_unitid === id;\n    }) || ({});\n  }\n  return id ? Tenants.selectedItem[id] : {};\n}",
+      "body": "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  if (id && !Tenants.selectedItem[id]) {\n    Tenants.selectedItem[id] = Tenants.items.find(item => {\n      return item.pp_unitid === id;\n    }) || ({});\n  }\n  return id ? Tenants.selectedItem[id] : {};\n}"
+      "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "FORM 6A - SITE ACCESS REQUEST _Tenants.getItem",
+  "id": "FORM 15 - FIT-OUT COMPLETION I_Units.options",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_635680a9dc264920d5e2893d"
+  "gitSyncId": "633ea50989020c7ac29654e2_63569aa531cf9c0f49180652"
 }

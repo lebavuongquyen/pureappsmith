@@ -16,7 +16,7 @@
     "pageId": "FORM 6A - SITE ACCESS REQUEST ",
     "collectionId": "FORM 6A - SITE ACCESS REQUEST _Units",
     "actionConfiguration": {
-      "timeoutInMillisecond": 10000,
+      "timeoutInMillisecond": 0,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}",
@@ -24,7 +24,7 @@
       "jsArguments": [],
       "isAsync": true
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -36,12 +36,12 @@
     "jsonPathKeys": [
       "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
   "id": "FORM 6A - SITE ACCESS REQUEST _Units.getItems",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_635680484b1a8d4291238a7d"
+  "gitSyncId": "633ea50989020c7ac29654e2_63569bffdc264920d5e28bca"
 }

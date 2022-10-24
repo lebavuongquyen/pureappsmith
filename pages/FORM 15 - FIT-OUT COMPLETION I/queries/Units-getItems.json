@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "getUnitType",
-    "fullyQualifiedName": "Tenants.getUnitType",
+    "name": "getItems",
+    "fullyQualifiedName": "Units.getItems",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,18 +13,18 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
-    "collectionId": "FORM 6A - SITE ACCESS REQUEST _Tenants",
+    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "collectionId": "FORM 15 - FIT-OUT COMPLETION I_Units",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  return Tenants.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
+      "body": "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
-      "isAsync": false
+      "isAsync": true
     },
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -34,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  return Tenants.getItem(id)[\"pp_unittype@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
+      "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
     ],
-    "userSetOnLoad": false,
+    "userSetOnLoad": true,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "FORM 6A - SITE ACCESS REQUEST _Tenants.getUnitType",
+  "id": "FORM 15 - FIT-OUT COMPLETION I_Units.getItems",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_635680a9dc264920d5e28935"
+  "gitSyncId": "633ea50989020c7ac29654e2_63569aa531cf9c0f49180651"
 }
