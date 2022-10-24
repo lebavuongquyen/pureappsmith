@@ -20,12 +20,12 @@
       "headers": [
         {
           "key": "content-type",
-          "value": "application/x-www-form-urlencoded"
+          "value": "application/json"
         }
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "",
+      "body": "{{SubmitData}}",
       "bodyFormData": [
         {
           "key": "name",
@@ -68,7 +68,7 @@
         }
       ],
       "formData": {
-        "apiContentType": "application/x-www-form-urlencoded"
+        "apiContentType": "application/json"
       }
     },
     "executeOnLoad": false,
@@ -96,12 +96,16 @@
       },
       {
         "key": "bodyFormData[7].value"
+      },
+      {
+        "key": "body"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
+      "SubmitData",
       "contact_number.text",
       "date.formattedDate",
       "email.text",
