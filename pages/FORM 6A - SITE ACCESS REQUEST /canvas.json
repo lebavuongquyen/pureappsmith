@@ -7027,9 +7027,10 @@
               "enableRotation": false
             },
             {
-              "resetFormOnClick": false,
+              "resetFormOnClick": true,
               "boxShadow": "none",
               "widgetName": "Button1",
+              "onClick": "{{submit.run(() => showAlert('Submit success','success'), () => showAlert('Fail to submit','error'))}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
               "displayName": "Button",
               "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -7044,6 +7045,11 @@
               "hideCard": false,
               "animateLoading": true,
               "parentColumnSpace": 26.0625,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
               "leftColumn": 1,
               "dynamicBindingPathList": [
                 {
