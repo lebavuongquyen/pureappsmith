@@ -7090,6 +7090,14 @@
               "pluginType": "API",
               "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "FORM 6A - SITE ACCESS REQUEST _Get_Units",
+              "name": "Get_Units",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
             }
           ],
           [
@@ -7101,6 +7109,17 @@
               "pluginType": "JS",
               "jsonPathKeys": [
                 "async () => {\n  if (!Get_Tenants.data) {\n    await Get_Tenants.run();\n  }\n  Tenants.items = Get_Tenants.data;\n  return Tenants.items;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "FORM 6A - SITE ACCESS REQUEST _Units.getItems",
+              "name": "Units.getItems",
+              "collectionId": "FORM 6A - SITE ACCESS REQUEST _Units",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}"
               ],
               "timeoutInMillisecond": 10000
             }
