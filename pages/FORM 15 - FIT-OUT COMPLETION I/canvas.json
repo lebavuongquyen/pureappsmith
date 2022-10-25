@@ -15614,7 +15614,7 @@
                       ],
                       "labelPosition": "Left",
                       "options": "{{Tenants.options()}}",
-                      "placeholderText": "Select option",
+                      "placeholderText": "Select Tenant",
                       "isDisabled": false,
                       "key": "7ckyu4mq35",
                       "labelTextSize": "3rem",
@@ -15630,7 +15630,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',unit_no.selectedOptionValue)}}"
+                      "onOptionChange": "{{resetWidget(\"unit_no\",true)}}"
                     },
                     {
                       "boxShadow": "none",
@@ -16334,8 +16334,8 @@
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": "{{Units.options()}}",
-                      "placeholderText": "Select option",
+                      "options": "{{Units.options(tenant_name.selectedOptionValue)}}",
+                      "placeholderText": "Select Unit",
                       "isDisabled": false,
                       "key": "7ckyu4mq35",
                       "labelTextSize": "3rem",
@@ -16351,7 +16351,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',unit_no.selectedOptionValue)}}"
+                      "onOptionChange": ""
                     },
                     {
                       "boxShadow": "none",

@@ -19,9 +19,11 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}",
+      "body": "tenant => {\n  let options = [];\n  if (Units.items) {\n    let temp = Units.items;\n    if (tenant) {\n      temp = Units.items.filter(function (item) {\n        return item._pp_tenant_value === tenant;\n      });\n    }\n    temp.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}",
       "selfReferencingDataPaths": [],
-      "jsArguments": [],
+      "jsArguments": [
+        {}
+      ],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -34,7 +36,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  let options = [];\n  if (Units.items) {\n    Units.items.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}"
+      "tenant => {\n  let options = [];\n  if (Units.items) {\n    let temp = Units.items;\n    if (tenant) {\n      temp = Units.items.filter(function (item) {\n        return item._pp_tenant_value === tenant;\n      });\n    }\n    temp.forEach(function (item) {\n      options.push({\n        label: item.pp_name,\n        value: item.pp_unitid\n      });\n    });\n  }\n  return options;\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
