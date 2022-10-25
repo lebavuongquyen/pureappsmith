@@ -5868,7 +5868,7 @@
                       ],
                       "labelPosition": "Left",
                       "options": "{{Tenants.options()}}",
-                      "placeholderText": "Select option",
+                      "placeholderText": "Select Tenant",
                       "isDisabled": false,
                       "key": "7ckyu4mq35",
                       "labelTextSize": "3rem",
@@ -5884,7 +5884,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',unit_no.selectedOptionValue)}}"
+                      "onOptionChange": "{{resetWidget(\"unit_no\",true)}}"
                     },
                     {
                       "boxShadow": "none",
@@ -6588,8 +6588,8 @@
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": "{{Units.options()}}",
-                      "placeholderText": "Select option",
+                      "options": "{{Units.options(tenant_name.selectedOptionValue)}}",
+                      "placeholderText": "Select Unit",
                       "isDisabled": false,
                       "key": "7ckyu4mq35",
                       "labelTextSize": "3rem",
@@ -6605,7 +6605,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{storeValue('unitId',unit_no.selectedOptionValue)}}"
+                      "onOptionChange": ""
                     },
                     {
                       "boxShadow": "none",
@@ -7084,16 +7084,18 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "FORM 6A - SITE ACCESS REQUEST _Get_Tenants",
-              "name": "Get_Tenants",
+              "id": "FORM 6A - SITE ACCESS REQUEST _Get_Units",
+              "name": "Get_Units",
               "confirmBeforeExecute": false,
               "pluginType": "API",
               "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
-            },
+            }
+          ],
+          [
             {
-              "id": "FORM 6A - SITE ACCESS REQUEST _Get_Units",
-              "name": "Get_Units",
+              "id": "FORM 6A - SITE ACCESS REQUEST _Get_Tenants",
+              "name": "Get_Tenants",
               "confirmBeforeExecute": false,
               "pluginType": "API",
               "jsonPathKeys": [],

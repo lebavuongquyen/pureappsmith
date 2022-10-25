@@ -16,7 +16,7 @@
     "pageId": "FORM 6A - SITE ACCESS REQUEST ",
     "collectionId": "FORM 6A - SITE ACCESS REQUEST _Units",
     "actionConfiguration": {
-      "timeoutInMillisecond": 0,
+      "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "body": "async () => {\n  if (!Get_Units.data) {\n    await Get_Units.run();\n  }\n  Units.items = Get_Units.data;\n  return Units.items;\n}",
