@@ -12,7 +12,8 @@
         "name": "queues",
         "value": "['https://szimek.github.io/signature_pad/js/signature_pad.umd.js']"
       }
-    ]
+    ],
+    "userPermissions": []
   },
   "id": "FORM 8 – SITE HANDOVER INSPECT_LoadJS",
   "deleted": false,

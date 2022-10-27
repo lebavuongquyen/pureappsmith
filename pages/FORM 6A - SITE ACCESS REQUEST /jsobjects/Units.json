@@ -16,7 +16,8 @@
         "name": "selectedItem",
         "value": "{}"
       }
-    ]
+    ],
+    "userPermissions": []
   },
   "id": "FORM 6A - SITE ACCESS REQUEST _Units",
   "deleted": false,

@@ -19,6 +19,10 @@
     {
       "id": "Signature test",
       "isDefault": false
+    },
+    {
+      "id": "FORM 15 - TABS",
+      "isDefault": false
     }
   ],
   "viewMode": false,
@@ -26,7 +30,7 @@
   "unreadCommentThreads": 0,
   "color": "#C7F3E3",
   "unpublishedAppLayout": {
-    "type": "FLUID"
+    "type": "DESKTOP"
   },
   "publishedAppLayout": {
     "type": "FLUID"

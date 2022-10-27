@@ -7,7 +7,8 @@
     "actions": [],
     "archivedActions": [],
     "body": "export default {\n\tformat : (file) => {\n\t\tlet temp = file.data + \"\";\n\t\ttemp = temp.split(\";base64,\");\n\t\tlet mime = temp[0].toString().replace(\"data:\" , \"\");\n\t\tlet binary = temp[1];\n\t\treturn {\n\t\t\tmimeType : mime,\n\t\t\tdocumentBody : binary,\n\t\t\tfilename : file.name\n\t\t};\n\t}\n}",
-    "variables": []
+    "variables": [],
+    "userPermissions": []
   },
   "id": "TIF_AttachmentObject",
   "deleted": false,

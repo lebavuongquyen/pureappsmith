@@ -20,7 +20,8 @@
         "name": "getGLA",
         "value": "id"
       }
-    ]
+    ],
+    "userPermissions": []
   },
   "id": "TIF_Units",
   "deleted": false,

@@ -16,7 +16,8 @@
         "name": "selectedItem",
         "value": "{}"
       }
-    ]
+    ],
+    "userPermissions": []
   },
   "id": "FORM 15 - FIT-OUT COMPLETION I_Tenants",
   "deleted": false,

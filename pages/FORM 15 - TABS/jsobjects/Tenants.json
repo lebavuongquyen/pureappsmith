@@ -1,7 +1,7 @@
 {
   "unpublishedCollection": {
     "name": "Tenants",
-    "pageId": "FORM 6A - SITE ACCESS REQUEST ",
+    "pageId": "FORM 15 - TABS",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "actions": [],
@@ -19,7 +19,7 @@
     ],
     "userPermissions": []
   },
-  "id": "FORM 6A - SITE ACCESS REQUEST _Tenants",
+  "id": "FORM 15 - TABS_Tenants",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_635680a2dc264920d5e28932"
+  "gitSyncId": "633ea50989020c7ac29654e2_6359fdb92d2bae0de0e3e87c"
 }

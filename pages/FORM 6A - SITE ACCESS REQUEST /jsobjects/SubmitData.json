@@ -12,7 +12,8 @@
         "name": "jsonData",
         "value": "{\n  name: tenant_name.selectedOptionLabel,\n  tc: tc.text,\n  position: position.text,\n  date: date.formattedDate,\n  unit_no: unit_no.selectedOptionLabel,\n  tenant_representative: tenant_representative.text,\n  email: email.text,\n  contact_number: contact_number.text\n}"
       }
-    ]
+    ],
+    "userPermissions": []
   },
   "id": "FORM 6A - SITE ACCESS REQUEST _SubmitData",
   "deleted": false,

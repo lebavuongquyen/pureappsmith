@@ -1,7 +1,7 @@
 {
   "unpublishedCollection": {
     "name": "SubmitData",
-    "pageId": "FORM 15 - FIT-OUT COMPLETION I",
+    "pageId": "FORM 15 - TABS",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "actions": [],
@@ -10,7 +10,7 @@
     "variables": [],
     "userPermissions": []
   },
-  "id": "FORM 15 - FIT-OUT COMPLETION I_SubmitData",
+  "id": "FORM 15 - TABS_SubmitData",
   "deleted": false,
-  "gitSyncId": "633ea50989020c7ac29654e2_63569a5c31cf9c0f49180647"
+  "gitSyncId": "633ea50989020c7ac29654e2_6359fdb92d2bae0de0e3e87a"
 }
