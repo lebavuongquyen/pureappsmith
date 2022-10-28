@@ -15,10 +15,6 @@
       {
         "name": "selectedItem",
         "value": "{}"
-      },
-      {
-        "name": "getGLA",
-        "value": "id"
       }
     ],
     "userPermissions": []

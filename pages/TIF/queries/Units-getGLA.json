@@ -19,9 +19,11 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "id => {\n  Get_Units.data;\n}",
+      "body": "id => {\n  return Units.getItem(id)[\"pp_gla@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}",
       "selfReferencingDataPaths": [],
-      "jsArguments": [],
+      "jsArguments": [
+        {}
+      ],
       "isAsync": false
     },
     "executeOnLoad": false,
@@ -34,7 +36,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "id => {\n  Get_Units.data;\n}"
+      "id => {\n  return Units.getItem(id)[\"pp_gla@OData.Community.Display.V1.FormattedValue\"] || \"\";\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

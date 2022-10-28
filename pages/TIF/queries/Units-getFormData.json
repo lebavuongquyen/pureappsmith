@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n  let _formData = {\n    name: input_tenant_\n  };\n  return _formData;\n}",
+      "body": "() => {\n  let _formData = {\n    name: input_tenant_trading_name.text,\n    attachment: file_attachments.files[0] ? AttachmentObject.format(file_attachments.files[0]) : null,\n    tenant_trading_name: input_tenant_trading_name.text,\n    unit: select_unit_no.selectedOptionValue,\n    description: input_additional_information.text\n  };\n  console.log(_formData);\n  return _formData;\n}",
       "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
@@ -34,7 +34,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "() => {\n  let _formData = {\n    name: input_tenant_\n  };\n  return _formData;\n}"
+      "() => {\n  let _formData = {\n    name: input_tenant_trading_name.text,\n    attachment: file_attachments.files[0] ? AttachmentObject.format(file_attachments.files[0]) : null,\n    tenant_trading_name: input_tenant_trading_name.text,\n    unit: select_unit_no.selectedOptionValue,\n    description: input_additional_information.text\n  };\n  console.log(_formData);\n  return _formData;\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
